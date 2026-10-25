@@ -1,7 +1,7 @@
 const readerParams=new URLSearchParams(location.search);const file=readerParams.get('file')||'';const title=readerParams.get('title')||'Document PDF';
 const q=s=>document.querySelector(s);
 if(!/^public\/examens\/(national|regional)\/(math|pc)\/202[0-5]\/[a-z0-9-]+\.pdf$/.test(file)){
- q('#reader').innerHTML='<div class="reader-error"><h1>Document introuvable</h1><p>Choisissez un document depuis la page des examens.</p><a class="gold" href="examens.html">Voir les examens</a></div>';
+ q('#reader').innerHTML='<div class="reader-error"><h1>Document introuvable</h1><p>Choisissez un document depuis la page des examens.</p><a class="gold" href="examens">Voir les examens</a></div>';
 }else{
  q('#document-title').textContent=title;document.title=title+' | Home School';q('#open-pdf').href=file;q('#download-pdf').href=file;
  let pdf=null,pageNumber=1,zoom=1,renderTask=null,version=0;
